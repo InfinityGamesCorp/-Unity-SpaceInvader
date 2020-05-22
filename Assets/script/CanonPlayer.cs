@@ -18,7 +18,6 @@ public class CanonPlayer : MonoBehaviour
         canon = gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.RightArrow))
