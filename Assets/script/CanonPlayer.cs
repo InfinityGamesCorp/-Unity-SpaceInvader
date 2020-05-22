@@ -30,20 +30,15 @@ public class CanonPlayer : MonoBehaviour
         {
             ProjectileShoot(canon.transform.position + new Vector3(0,0.4f,0));
         }
+
+        if (canon.transform.position.x > 8.5f)
+            canon.transform.position = new Vector3(8.5f, -4f, 0f);
+        if (canon.transform.position.x < -8.5f)
+            canon.transform.position = new Vector3(-8.5f, -4f, 0f);
     }
 
     public void ProjectileShoot(Vector3 position)
     {
         Instantiate(gm, position, Quaternion.identity);
-    }
-    private void FixedUpdate()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.name == "Mur_Droit")
-            canon.transform.position = new Vector3(8.3f, -4, 0);
     }
 }
